@@ -1,11 +1,22 @@
 
-import React from "react";
+import React, {useState} from "react";
 import './../styles/App.css';
 
 const App = () => {
+    const [input , setInput] = useState(' ')
+    const oninput = (e) =>{
+        const{value} = e.target;
+        setInput(value);
+    }
+    const onClear = () => {
+        setInput(' ')
+    }
+
   return (
     <div>
-        {/* Do not remove the main div */}
+     <input type="text" onChange={oninput} />
+     {!!input.length&&<p>Hello{input}!</p>}
+     <button onClick={onClear}></button>
     </div>
   )
 }

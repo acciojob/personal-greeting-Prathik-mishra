@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-     <input type="text" onChange={oninput} />
+     <input value ={input} onChange={oninput} />
      {!!input.length&&<p>Hello{input}!</p>}
      <button onClick={onClear}></button>
     </div>
